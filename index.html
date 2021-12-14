@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+    integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
+    crossorigin="anonymous">
+    <title>Find a pair</title>
+    <script defer src="game-app.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    createTodoApp(document.querySelector('#todo-app'), 'Игра найди пару');
+})
+    </script>
+</head>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Roboto&display=swap');
+  body {
+        font-family: "Roboto";
+    }
+    img {
+        width: 100%;
+        height: 100%;
+    }
+    ul {
+        padding: 0;
+        list-style: none;
+        transition: all 300ms;
+    }
+    .cards__item {
+        transition: 300ms;
+    }
+    .cards__item:hover.animate {
+        transform: scale(1.1);
+    }
+    .cards__item.show {
+        pointer-events: none !important;
+    }
+    .hide {
+        position: relative;
+    }
+    .leader__item:hover {
+        transform: scale(1.01);
+    }
+    .hide::before {
+        content: '';
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        position: absolute;
+        background: url("./assets/image/fon.jpg") center;
+        background-size: cover;
+        z-index: 99;
+        opacity: 1;
+    }
+    .show {
+        pointer-events: none;
+    }
+    .match {
+        background: gold;
+    }
+    p {
+        margin: 0;
+    }
+</style>
+<body>
+    <div id="todo-app" class="container position-relative"></div>
+</body>
+</html>
